@@ -1,0 +1,15 @@
+##Parsing SARS-CoV-2 DNA Sequence file and its spike protein PDBFile 
+
+#import SeqIO module from Bio Library 
+From Bio import SeqIO
+#parse the file using SeqIO attribute parse
+for seq_record in SeqIO.parse("SARS_CoV.fasta","fasta" ):
+#structure output of the parsed file 
+Print(seq_record.id)
+Print(repr(seq_record.seq))
+Print(len(seq_record.seq))
+
+#Parsing 7dwx surface spike protein of SARS-CoV-2
+import Bio.PDB
+header = Bio.PDB.parse_pdb_header("7dwx_SARS_CoV.pdb")
+print(header)
